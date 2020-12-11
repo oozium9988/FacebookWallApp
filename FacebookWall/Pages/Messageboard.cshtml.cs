@@ -31,14 +31,14 @@ namespace FacebookWall.Pages
             People = await _context.People.ToListAsync();
             Comments = await _context.Replies.ToListAsync();
 
-            int maxPostId = int.MinValue;
+            int maxPostId = -1;
 
             foreach (var item in Posts)
             {
                 maxPostId = Math.Max(maxPostId, item.Id);
             }
 
-            int maxCommentId = int.MinValue;
+            int maxCommentId = -1;
 
             foreach (var comment in Comments)
             {
