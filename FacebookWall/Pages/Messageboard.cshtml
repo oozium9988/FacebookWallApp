@@ -1,0 +1,61 @@
+﻿@page
+@model FacebookWall.Pages.MessageboardModel
+
+@{
+    ViewData["Title"] = "Messageboard";
+}
+
+
+<div class="container overflow-hidden">
+    @foreach (var item in Model.Posts)
+    {
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 bg-light mt-3 pt-1 pb-1 rounded">
+            <form method="post">
+                <div class="row align-items-start">
+                    <div class="col-md-1 align-items-center">
+                        <img 
+                             src="/Images/profile.jpg"
+                             class="rounded-circle"
+                             alt="Avatar" 
+                             width="40" 
+                             height="40" 
+                             style="margin-top: 4px"/>
+                    </div>
+                    <div class="col-md ml-2">
+                        <small class="font-weight-bold">@Model.PostMap[item.Id]</small>
+                        <p><small class="text-muted font-weight-light">@item.DateAndTime.ToString("d/M/yyyy HH:mm")</small></p>
+                    </div>
+                </div>
+                <p style="font-size: 14px">@item.Body</p>
+                <hr />
+                <button class="btn btn-link text-muted" type="submit"><small>Write a comment</small></button>
+                <input type="hidden" name="id" value="@item.Id" />
+            </form>
+        @foreach (var reply in item.Replies)
+        {
+            <div class="col-md-10 mt-3 pt-1 pb-1 rounded" style="background-color: #E8E8E8">
+                <div class="row align-items-start">
+                    <div class="col-md-1 align-items-center">
+                        <img src="/Images/profile.jpg"
+                             class="rounded-circle"
+                             alt="Avatar"
+                             width="40"
+                             height="40"
+                             style="margin-top: 4px" />
+                    </div>
+                    <div class="col-md ml-3">
+                        <small class="font-weight-bold">@Model.CommentMap[reply.Id]</small>
+                        <p><small class="text-muted font-weight-light">@reply.DateAndTime.ToString("d/M/yyy HH:mm")</small></p>
+                    </div>
+                </div>
+                <p style="font-size: 14px">@reply.Body</p>
+             </div>
+        }
+        </div>
+    </div>
+    }
+</div>
+
+

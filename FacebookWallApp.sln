@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacebookWall", "FacebookWall\FacebookWall.csproj", "{33F583D7-9182-4F18-A4E7-40BCB3D29E90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacebookWallDataAccessLibrary", "FacebookWallDataAccessLibrary\FacebookWallDataAccessLibrary.csproj", "{7A4918FA-DBDA-40F3-B4BA-1B33F31E62F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33F583D7-9182-4F18-A4E7-40BCB3D29E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F583D7-9182-4F18-A4E7-40BCB3D29E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F583D7-9182-4F18-A4E7-40BCB3D29E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F583D7-9182-4F18-A4E7-40BCB3D29E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A4918FA-DBDA-40F3-B4BA-1B33F31E62F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A4918FA-DBDA-40F3-B4BA-1B33F31E62F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A4918FA-DBDA-40F3-B4BA-1B33F31E62F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A4918FA-DBDA-40F3-B4BA-1B33F31E62F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76BAA0DB-6730-48EE-ABA3-AEBA6D6212E8}
+	EndGlobalSection
+EndGlobal
