@@ -7,6 +7,26 @@
 
 <div class="row justify-content-center">
     <div class="col-md-4 bg-light mt-3 pt-2 rounded">
+        <div class="row align-items-start">
+            <div class="col-md-1 align-items-center">
+                <img src="/Images/profile.jpg"
+                     class="rounded-circle"
+                     alt="Avatar"
+                     width="40"
+                     height="40"
+                     style="margin-top: 4px" />
+            </div>
+            <div class="col-md ml-2">
+                <small class="font-weight-bold">@Model.PostersName</small>
+                <p><small class="text-muted font-weight-light">@Model.Post.DateAndTime.ToString("d/M/yyyy HH:mm")</small></p>
+            </div>
+        </div>
+        <p style="font-size: 14px">@Model.Post.Body</p>
+    </div>
+</div>
+<hr class="bg-primary mt-3"/>
+<div class="row justify-content-center">
+    <div class="col-md-4 bg-light mt-3 pt-2 rounded">
         <form method="post">
             <p class="align-content-start font-weight-bold">
                 <svg width="2em" height="0.8em" viewBox="0 0 16 16" class="bi bi-pencil-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

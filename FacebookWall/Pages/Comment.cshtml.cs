@@ -27,6 +27,8 @@ namespace FacebookWall.Pages
         [BindProperty]
         public string RepliersName { get; set; }
 
+        public string PostersName { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -35,6 +37,8 @@ namespace FacebookWall.Pages
             }
 
             Post = await _context.Posts.FirstOrDefaultAsync(m => m.Id == id);
+            var person = await _context.People.FirstOrDefaultAsync(p => p.Posts.Contains(Post));
+            PostersName = person.Name;
 
             if (Post == null)
             {
