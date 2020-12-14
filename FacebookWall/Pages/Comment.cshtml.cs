@@ -75,10 +75,5 @@ namespace FacebookWall.Pages
 
             return RedirectToPage("./Messageboard");
         }
-
-        private bool PostExists(int id)
-        {
-            return _context.Posts.Any(e => e.Id == id);
-        }
     }
 }
