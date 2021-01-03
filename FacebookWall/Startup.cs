@@ -6,6 +6,7 @@ using FacebookWallDataAccessLibrary.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +31,7 @@ namespace FacebookWall
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
             services.AddRazorPages();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,10 +57,12 @@ namespace FacebookWall
 
             app.UseAuthorization();
 
+            app.UseMvcWithDefaultRoute();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-            });
+            });      
         }
     }
 }

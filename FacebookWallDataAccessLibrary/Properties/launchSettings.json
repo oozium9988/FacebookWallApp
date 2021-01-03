@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FacebookWallDataAccessLibrary": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "Key": "Value"
+      }
+    }
+  }
+}
