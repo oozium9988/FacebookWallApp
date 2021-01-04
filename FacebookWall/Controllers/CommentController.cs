@@ -20,7 +20,7 @@ namespace FacebookWall.Pages
             _context = context;
         }
 
-        public async Task<IActionResult> Comment([Bind("Reply, RepliersName")] CommentViewModel commentViewModel, int? id)
+        public async Task<IActionResult> Comment([Bind("Comment, CommentersName")] CommentViewModel commentViewModel, int? id)
         {
             if (id == null)
             {
@@ -40,7 +40,7 @@ namespace FacebookWall.Pages
 
         [HttpPost]
         [ActionName("Comment")]
-        public async Task<IActionResult> CommentPost([Bind("Reply", "RepliersName")] CommentViewModel commentViewModel, int? id)
+        public async Task<IActionResult> CommentPost([Bind("Comment, CommentersName")] CommentViewModel commentViewModel, int? id)
         {
             if (!ModelState.IsValid)
             {
@@ -48,24 +48,24 @@ namespace FacebookWall.Pages
             }
 
             var Person = _context.People
-                                .Where(p => p.Name == commentViewModel.RepliersName)
+                                .Where(p => p.Name == commentViewModel.CommentersName)
                                 .FirstOrDefault();
 
             var Post = await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
-            Post.Replies.Add(commentViewModel.Reply);
+            Post.Comments.Add(commentViewModel.Comment);
 
             if (Person == null)
             {
-                var newPerson = new Person { Name = commentViewModel.RepliersName };
-                newPerson.Comments.Add(commentViewModel.Reply);
+                var newPerson = new Person { Name = commentViewModel.CommentersName };
+                newPerson.Comments.Add(commentViewModel.Comment);
                 _context.People.Add(newPerson);
             }
             else
             {
-                Person.Comments.Add(commentViewModel.Reply);
+                Person.Comments.Add(commentViewModel.Comment);
             }
 
-            _context.Replies.Add(commentViewModel.Reply);
+            _context.Comments.Add(commentViewModel.Comment);
 
             await _context.SaveChangesAsync();
 

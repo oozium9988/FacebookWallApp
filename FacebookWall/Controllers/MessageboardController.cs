@@ -26,7 +26,7 @@ namespace FacebookWall.Pages
             {
                 Posts = await _context.Posts.ToListAsync(),
                 People = await _context.People.ToListAsync(),
-                Comments = await _context.Replies.ToListAsync()
+                Comments = await _context.Comments.ToListAsync()
             };           
 
             return View(messageboardViewModel);

@@ -15,6 +15,6 @@ namespace FacebookWallDataAccessLibrary.Models
 
         public virtual List<Post> Posts { get; set; } = new List<Post>();
 
-        public virtual List<Reply> Comments { get; set; } = new List<Reply>();
+        public virtual List<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

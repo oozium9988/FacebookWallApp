@@ -31,7 +31,7 @@
                 <button class="btn btn-link text-muted" type="submit"><small>Write a comment</small></button>
                 <input type="hidden" name="id" value="@item.Id" />
             </form>
-        @foreach (var reply in item.Replies)
+        @foreach (var comment in item.Comments)
         {
             <div class="col-md-10 mt-3 pt-1 pb-1 rounded" style="background-color: #E8E8E8">
                 <div class="row align-items-start">
@@ -44,11 +44,11 @@
                              style="margin-top: 4px" />
                     </div>
                     <div class="col-md ml-3">
-                        <small class="font-weight-bold">@reply.Person.Name</small>
-                        <p><small class="text-muted font-weight-light">@reply.DateAndTime.ToString("d/M/yyy HH:mm")</small></p>
+                        <small class="font-weight-bold">@comment.Person.Name</small>
+                        <p><small class="text-muted font-weight-light">@comment.DateAndTime.ToString("d/M/yyy HH:mm")</small></p>
                     </div>
                 </div>
-                <p style="font-size: 14px">@reply.Body</p>
+                <p style="font-size: 14px">@comment.Body</p>
              </div>
         }
         </div>

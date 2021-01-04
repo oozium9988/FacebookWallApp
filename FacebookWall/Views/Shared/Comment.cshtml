@@ -34,12 +34,12 @@
             </p>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <input asp-for="RepliersName" placeholder="Tell us your name" class="form-control" />
-                <span asp-validation-for="RepliersName" class="text-danger"></span>
+                <input asp-for="CommentersName" placeholder="Tell us your name" class="form-control" />
+                <span asp-validation-for="CommentersName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <textarea asp-for="Reply.Body" placeholder="Write your comment here" class="form-control" style="height: 100px"></textarea>
-                <span asp-validation-for="Reply.Body" class="text-danger"></span>
+                <textarea asp-for="Comment.Body" placeholder="Write your comment here" class="form-control" style="height: 100px"></textarea>
+                <span asp-validation-for="Comment.Body" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="POST" class="btn btn-primary" />

@@ -8,7 +8,7 @@ namespace FacebookWall.ViewModels
 {
     public class MessageboardViewModel
     {
-        public IList<Reply> Comments { get; set; }
+        public IList<Comment> Comments { get; set; }
         public IList<Post> Posts { get; set; }
         public IList<Person> People { get; set; }
     }

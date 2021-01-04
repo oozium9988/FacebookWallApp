@@ -10,9 +10,9 @@ namespace FacebookWall.ViewModels
     {
         public Post Post { get; set; }
 
-        public Reply Reply { get; set; }
+        public Comment Comment { get; set; }
 
-        public string RepliersName { get; set; }
+        public string CommentersName { get; set; }
 
         public string PostersName { get; set; }
     }

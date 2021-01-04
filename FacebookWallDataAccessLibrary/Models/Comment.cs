@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FacebookWallDataAccessLibrary.Models
 {
-    public class Reply
+    public class Comment
     {
         public int Id { get; set; }
 
