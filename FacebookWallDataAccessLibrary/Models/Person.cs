@@ -13,8 +13,8 @@ namespace FacebookWallDataAccessLibrary.Models
         [MaxLength(100)]
         public string Name { get; set; }
 
-        public List<Post> Posts { get; set; } = new List<Post>();
+        public virtual List<Post> Posts { get; set; } = new List<Post>();
 
-        public List<Reply> Comments { get; set; } = new List<Reply>();
+        public virtual List<Reply> Comments { get; set; } = new List<Reply>();
     }
 }

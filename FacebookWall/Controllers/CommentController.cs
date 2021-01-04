@@ -28,8 +28,7 @@ namespace FacebookWall.Pages
             }
 
             commentViewModel.Post = await _context.Posts.FirstOrDefaultAsync(m => m.Id == id);
-            var person = await _context.People.FirstOrDefaultAsync(p => p.Posts.Contains(commentViewModel.Post));
-            commentViewModel.PostersName = person.Name;
+            commentViewModel.PostersName = commentViewModel.Post.Person.Name;
 
             if (commentViewModel.Post == null)
             {
@@ -52,8 +51,8 @@ namespace FacebookWall.Pages
                                 .Where(p => p.Name == commentViewModel.RepliersName)
                                 .FirstOrDefault();
 
-            commentViewModel.Post = await _context.Posts.FirstOrDefaultAsync(m => m.Id == id);
-            commentViewModel.Post.Replies.Add(commentViewModel.Reply);
+            var Post = await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
+            Post.Replies.Add(commentViewModel.Reply);
 
             if (Person == null)
             {

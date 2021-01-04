@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using FacebookWallDataAccessLibrary.DataAccess;
 using System.Threading.Tasks;
 using System.Linq;
+using FacebookWall.Controllers;
 
 namespace FacebookWall.Tests
 {
@@ -27,10 +28,10 @@ namespace FacebookWall.Tests
                 var post = new Post() { Body = "Test post" };
                 string personName = "Post Test Name";
                 //Act
-                IndexModel indexModel = new IndexModel(context);
-                indexModel.PersonName = personName;
+                HomeController homeController = new HomeController(context);
+                /*indexModel.PersonName = personName;
                 indexModel.Post = post;
-                await indexModel.OnPostAsync();
+                await indexModel.OnPostAsync();*/
 
                 //Assert
                 Assert.Equal(personName, context.People.Where(p => p.Name == personName).FirstOrDefault().Name);

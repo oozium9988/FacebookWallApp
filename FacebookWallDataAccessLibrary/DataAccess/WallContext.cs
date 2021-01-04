@@ -12,5 +12,10 @@ namespace FacebookWallDataAccessLibrary.DataAccess
         public DbSet<Person> People { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Reply> Replies { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
+        }
     }
 }

@@ -11,7 +11,5 @@ namespace FacebookWall.ViewModels
         public IList<Reply> Comments { get; set; }
         public IList<Post> Posts { get; set; }
         public IList<Person> People { get; set; }
-        public string[] PostMap { get; set; }
-        public string[] CommentMap { get; set; }
     }
 }

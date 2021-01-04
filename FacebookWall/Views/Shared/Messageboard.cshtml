@@ -22,7 +22,7 @@
                              style="margin-top: 4px"/>
                     </div>
                     <div class="col-md ml-2">
-                        <small class="font-weight-bold">@Model.PostMap[item.Id]</small>
+                        <small class="font-weight-bold">@item.Person.Name</small>
                         <p><small class="text-muted font-weight-light">@item.DateAndTime.ToString("d/M/yyyy HH:mm")</small></p>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                              style="margin-top: 4px" />
                     </div>
                     <div class="col-md ml-3">
-                        <small class="font-weight-bold">@Model.CommentMap[reply.Id]</small>
+                        <small class="font-weight-bold">@reply.Person.Name</small>
                         <p><small class="text-muted font-weight-light">@reply.DateAndTime.ToString("d/M/yyy HH:mm")</small></p>
                     </div>
                 </div>

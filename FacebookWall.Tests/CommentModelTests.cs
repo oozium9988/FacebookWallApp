@@ -29,11 +29,11 @@ namespace FacebookWall.Tests
                 context.SaveChanges();
                 string repliersName = "Mr Test";
                 //Act
-                CommentModel commentModel = new CommentModel(context);
-                commentModel.RepliersName = repliersName;
+                CommentController commentController = new CommentController(context);
+                /*commentController.RepliersName = repliersName;
                 commentModel.Post = post;
                 commentModel.Reply = reply;
-                await commentModel.OnPostAsync(1);
+                await commentModel.OnPostAsync(1);*/
 
                 //Assert
                 Assert.Equal(repliersName, context.People.Where(p => p.Name == repliersName).FirstOrDefault().Name);

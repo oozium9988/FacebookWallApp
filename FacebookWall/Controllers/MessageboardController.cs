@@ -29,39 +29,6 @@ namespace FacebookWall.Pages
                 Comments = await _context.Replies.ToListAsync()
             };           
 
-            int maxPostId = -1;
-
-            foreach (var item in messageboardViewModel.Posts)
-            {
-                maxPostId = Math.Max(maxPostId, item.Id);
-            }
-
-            int maxCommentId = -1;
-
-            foreach (var comment in messageboardViewModel.Comments)
-            {
-                maxCommentId = Math.Max(maxCommentId, comment.Id);
-            }
-
-            messageboardViewModel.PostMap = new string[maxPostId + 1];
-            messageboardViewModel.CommentMap = new string[maxCommentId + 1];
-            
-            foreach (var person in messageboardViewModel.People)
-            {
-                foreach (var post in person.Posts)
-                {
-                    messageboardViewModel.PostMap[post.Id] = person.Name;
-                }
-            }
-
-            foreach (var person in messageboardViewModel.People)
-            {
-                foreach (var comment in person.Comments)
-                {
-                    messageboardViewModel.CommentMap[comment.Id] = person.Name;
-                }
-            }
-
             return View(messageboardViewModel);
         }
 
